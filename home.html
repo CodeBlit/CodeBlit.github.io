@@ -154,12 +154,9 @@
     <section id="contact">
         <h2>Contact Us</h2>
         <div class="card">
-            <form onsubmit="handleSubmit(event)">
+            <form onsubmit="sendEmail(event)">
                 <label for="name">Name</label>
                 <input type="text" id="name" required placeholder="Your name">
-                
-                <label for="email">Email</label>
-                <input type="email" id="email" required placeholder="your@email.com">
                 
                 <label for="message">Message</label>
                 <textarea id="message" rows="5" required placeholder="Your message"></textarea>
@@ -180,10 +177,13 @@
         if (el) el.scrollIntoView({ behavior: 'smooth' });
     }
 
-    function handleSubmit(event) {
+    function sendEmail(event) {
         event.preventDefault();
-        const name = document.getElementById("name").value;
-        alert("Thank you, " + name + "! This form doesn't send anywhere because it's a demo.");
+        const name = document.getElementById('name').value
+        const message = document.getElementById('message').value
+
+        alert("Thank you for messageing me, " + name + "! You will now to go your mail.");
+        window.location.href = `mailto:flora@ratgers-online.nl?subject=${encodeURIComponent(name + " has a question!")}&body=${encodeURIComponent(message)}`;
     }
 </script>
 
