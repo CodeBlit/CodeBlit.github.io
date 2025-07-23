@@ -75,34 +75,6 @@
             margin: 1rem 0;
         }
 
-        #contact form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        #contact input, #contact textarea {
-            padding: 0.75rem;
-            margin: 0.5rem 0;
-            border: none;
-            border-radius: 5px;
-            background: #2b2b2b;
-            color: var(--text);
-        }
-
-        #contact button {
-            background-color: var(--accent);
-            color: white;
-            padding: 0.75rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 0.5rem;
-        }
-
-        #contact button:hover {
-            background-color: #e03c3c;
-        }
-
         footer {
             background-color: #1a1a1a;
             padding: 1rem;
@@ -141,35 +113,6 @@
             <p>This is a complex HTML page example with navigation, cards, styles, responsiveness, and JavaScript interactivity.</p>
         </div>
     </section>
-
-    <section id="about">
-        <h2>About Us</h2>
-        <div class="card">
-            <p>We are a team of developers, designers, and dreamers building cool things on the web. This page is fully made in vanilla HTML/CSS/JS.</p>
-        </div>
-        <div class="card">
-            <ul>
-                <li>✔ Built without any frameworks</li>
-                <li>✔ Responsive for mobile devices</li>
-                <li>✔ Clean and accessible</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <div class="card">
-            <form onsubmit="sendEmail(event)">
-                <label for="name">Name</label>
-                <input type="text" id="name" required placeholder="Your name">
-                
-                <label for="message">Message</label>
-                <textarea id="message" rows="5" required placeholder="Your message"></textarea>
-                
-                <button type="submit">Send</button>
-            </form>
-        </div>
-    </section>
 </main>
 
 <footer>
@@ -177,30 +120,6 @@
 </footer>
 
 <script>
-    function scrollToSection(id) {
-        const el = document.getElementById(id);
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
-    }
-
-    function sendEmail(event) {
-        event.preventDefault();
-
-        const name = document.getElementById('name').value.trim();
-        const message = document.getElementById('message').value.trim();
-
-        if (!name || !message) {
-            alert("Please fill in both fields.");
-            return;
-        }
-
-        alert("Thank you for messaging me, " + name + "! Your email app will now open.");
-        
-        const subject = encodeURIComponent(`${name} has a question!`);
-        const body = encodeURIComponent(message);
-        const mailto = `mailto:flora@ratgers-online.nl?subject=${subject}&body=${body}`;
-        
-        window.location.href = mailto;
-    }
 </script>
 
 </body>
