@@ -179,11 +179,22 @@
 
     function sendEmail(event) {
         event.preventDefault();
-        const name = document.getElementById('name').value
-        const message = document.getElementById('message').value
 
-        alert("Thank you for messageing me, " + name + "! You will now to go your mail.");
-        window.location.href = `mailto:flora@ratgers-online.nl?subject=${encodeURIComponent(name + " has a question!")}&body=${encodeURIComponent(message)}`;
+        const name = document.getElementById('name').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        if (!name || !message) {
+            alert("Please fill in both fields.");
+            return;
+        }
+
+        alert("Thank you for messaging me, " + name + "! Your email app will now open.");
+        
+        const subject = encodeURIComponent(`${name} has a question!`);
+        const body = encodeURIComponent(message);
+        const mailto = `mailto:flora@ratgers-online.nl?subject=${subject}&body=${body}`;
+        
+        window.location.href = mailto;
     }
 </script>
 
