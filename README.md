@@ -1,2 +1,3 @@
-# CodeBlit.github.io
+# CodeBlit website
+
 A coding website
